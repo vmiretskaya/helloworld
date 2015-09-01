@@ -8,11 +8,69 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
   <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
+   <!--JQuery Media Script-->
+    <script type='text/javascript' src='js/jquery.media.js'></script>
+    <script type='text/javascript' src='js/jquery.stellar.min.js'></script>
 
-<h1>Welcome to bike København</h1>
-<h2>Your source for used bikes in København</h2>
+</head>
+<body data-spy="scroll" data-target=".navbar">
+
+<!--h1>Welcome to bike København</h1-->
+<!--h2>Your source for used bikes in København</h2-->
+<!--Navigator bar stars-->
+<header data-role="header">
+<div class = "navbar navbar-inverse navbar-fixed-top">
+      <div class = "container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>  
+       <div class = "navbar-collapse collapse">
+
+           <div class="projectName">
+            <!--a href="#"><img src="img/logo.png" alt="logo" height="120" width="120"/></a-->
+            <p>CyklershopApp</p>
+          </div>
+          
+           <nav class = "mainmenu">
+           <ul class = "nav navbar-nav">
+            <!--li><a href="#contact">Contacts</a></li-->        
+            <li><%= link_to 'Contacts', static_page_contact_path %></li>
+            <!--li><a href="#about">About</a></li-->
+            <li><%= link_to 'About', static_page_about_path %></li>
+            <!--li><a href="#products">Products</a></li-->
+            <li><%= link_to 'Products', products_path %></li>
+            <!--li><a href="#">Home</a></li-->
+            <li><%= link_to 'Home', static_page_index_path %></li>
+          </ul>  
+          </nav>
+        </div>
+      </div> 
+    </div> 
+</div>    
+</header>
+<!--Navigator bar ends-->
+
+<!--footer>
+	<div class="footer-block">
+		<div class="social-wrapper">
+			<ul class="social-section">
+			<li><a href="https://dk.linkedin.com/pub/victoria-miretskaya/57/67b/4b9" target="_blank" title="Me on LinkedIn" id="linkedhref"><img src="img/linkedin.png" alt="linkedin" /></a></li>
+			<li><a href="https://www.facebook.com/victoria.miretskaya" target="_blank" title="Me on facebook" id="fbhref"><img src="img/facebook.png" alt="facebook" /></a></li>
+			</ul>
+		</div> 
+         	
+		<div class="copyright" style="color:gray;">
+			<p>&copy Viktoriia Miretska 2015 | All rights reserved</p>
+		</div>
+	</div>
+</footer-->
+
 <%= yield %>
 
 </body>
