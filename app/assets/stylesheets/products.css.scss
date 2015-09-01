@@ -1,0 +1,19 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.product-list h1{
+	color:  #4e552b;
+	font-weight: bold;
+	text-align: center;
+	font-family: sans-serif;
+	margin-top:75px;
+
+}
+
+.product-table{
+	border:1px solid #4e552b;
+    width: 100%;
+     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+}
