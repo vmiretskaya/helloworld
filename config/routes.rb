@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :products
+  resources :orders, only: [:index, :show, :new, :create]
 
   get 'static_page/about'
 
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-    root 'static_page#index'
+    root 'static_page#landing_page'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
