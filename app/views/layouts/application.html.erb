@@ -18,8 +18,8 @@
 <!--h1>Welcome to bike København</h1-->
 <!--h2>Your source for used bikes in København</h2-->
 <!--Navigator bar stars-->
-<header data-role="header">
-<div class = "navbar navbar-inverse navbar-fixed-top">
+<!--header data-role="header"-->
+<nav class = "navbar navbar-inverse navbar-fixed-top">
       <div class = "container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -40,36 +40,28 @@
            <nav class = "mainmenu">
            <ul class = "nav navbar-nav">
             <!--li><a href="#contact">Contacts</a></li-->        
-            <li><%= link_to 'Contacts', static_page_contact_path %></li>
+            <li><%= link_to 'Contacts', static_pages_contact_path %></li>
             <!--li><a href="#about">About</a></li-->
-            <li><%= link_to 'About', static_page_about_path %></li>
+            <li><%= link_to 'About', static_pages_about_path %></li>
             <!--li><a href="#products">Products</a></li-->
             <li><%= link_to 'Products', products_path %></li>
             <!--li><a href="#">Home</a></li-->
-            <li><%= link_to 'Home', static_page_index_path %></li>
+            <li><%= link_to 'Home', root_path %></li>
           </ul>  
+          <div class="search-form">
+            <%= form_tag("/products", method: "get") do %>
+            <%= label_tag(:q, "Search for:") %>
+            <%= text_field_tag(:q) %>
+            <%= submit_tag("Search") %>
+            <% end %>
+        </div>
           </nav>
         </div>
       </div> 
     </div> 
-</div>    
-</header>
+</nav>    
+<!--/header-->
 <!--Navigator bar ends-->
-
-<!--footer>
-	<div class="footer-block">
-		<div class="social-wrapper">
-			<ul class="social-section">
-			<li><a href="https://dk.linkedin.com/pub/victoria-miretskaya/57/67b/4b9" target="_blank" title="Me on LinkedIn" id="linkedhref"><img src="img/linkedin.png" alt="linkedin" /></a></li>
-			<li><a href="https://www.facebook.com/victoria.miretskaya" target="_blank" title="Me on facebook" id="fbhref"><img src="img/facebook.png" alt="facebook" /></a></li>
-			</ul>
-		</div> 
-         	
-		<div class="copyright" style="color:gray;">
-			<p>&copy Viktoriia Miretska 2015 | All rights reserved</p>
-		</div>
-	</div>
-</footer-->
 
 <%= yield %>
 

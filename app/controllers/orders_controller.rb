@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
-	
-	  def index     
+	  before_action :set_order, only: [:show, :destroy]
+	  
+    def index     
   	 @orders = Order.all
     end
 

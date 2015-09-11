@@ -15,8 +15,7 @@
 
   <tbody>
     <% @products.each do |product| %>
-    <%= render partial: "product", locals: {product: product} %>
-    
+    <%= render partial: "product", locals: {product: product} %>    
     <% end %>
   </tbody>
 </table>
@@ -24,4 +23,5 @@
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+<%= link_to 'Orders', orders_path %>
 </div>
