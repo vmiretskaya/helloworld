@@ -48,13 +48,26 @@
             <!--li><a href="#">Home</a></li-->
             <li><%= link_to 'Home', root_path %></li>
           </ul>  
-          <div class="search-form">
-            <%= form_tag("/products", method: "get") do %>
-            <%= label_tag(:q, "Search for:") %>
-            <%= text_field_tag(:q) %>
-            <%= submit_tag("Search") %>
+          <div>
+            <div class="search-form">
+              <%= form_tag("/products", method: "get") do %>
+              <%= label_tag(:q, "Search for:") %>
+              <%= text_field_tag(:q) %>
+              <%= submit_tag("Search") %>
+              <% end %>
+            </div>
+            <div class="auth-btn">
+              <% if user_signed_in? %>
+              <li>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+              </li>
+              <% else %>
+              <li>
+              <%= link_to('Login', new_user_session_path) %>  
+            </li>
+            <div>
             <% end %>
-        </div>
+           </div> 
           </nav>
         </div>
       </div> 
@@ -62,6 +75,13 @@
 </nav>    
 <!--/header-->
 <!--Navigator bar ends-->
+<% if notice %>
+  <p class=""><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class=""><%= alert %></p>
+<% end %>
+
 
 <%= yield %>
 
