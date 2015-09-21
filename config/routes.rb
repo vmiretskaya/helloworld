@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :user, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
+  devise_for :user, 
+             :path => '', 
+             :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
     
     devise_scope :user do
         get 'login', to: "devise/sessions#new", as: "login"
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :products
-  resources :orders, only: [:index, :show, :new, :create]
+  resources :orders
 
   get 'static_pages/about'
 
