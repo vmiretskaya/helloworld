@@ -1,7 +1,8 @@
     <tr>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
-        <td><%= product.image_url %></td>
+        <td><%= image_tag(product.image_url, style: "max-height: 200px; max-width: 200px;") %>
+        <br><%= product.image_url %></td>
         <td><%= product.color %></td>
         <td><%= product.price %></td>
         <td><%= link_to 'Show', product %></td>

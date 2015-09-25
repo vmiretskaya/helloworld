@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :products do
-    resources comments
+   resources :comments
   end  
   resources :orders
 

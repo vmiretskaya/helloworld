@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <div class="show-product">
+<div class="show-img-product">
+<p>
+  <%= image_tag(@product.image_url, style: "max-height: 400px; max-width: 400px;") %>
+</p>
+</div>
+<div class="show-inf-product">
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -11,11 +17,7 @@
   <%= @product.description %>
 </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-
+<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
 <p>
   <strong>Color:</strong>
   <%= @product.color %>
@@ -26,6 +28,12 @@
   <%= @product.price %>
 </p>
 </div>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+</div>
+<div class="show-comm-product">
+  <%= render 'new_comment' %>
+  <%= render 'comments' %>
+</div>
+<div class = "links">
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', products_path %>
+</div>
