@@ -23,8 +23,10 @@
 <br>
 
 <div>
+<% if signed_in? %>
 <%= link_to 'New Product', new_product_path %>
 <%= link_to 'Orders', orders_path %>
+<% end %>
 </div>
 
 <div class="links-page">
