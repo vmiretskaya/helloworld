@@ -24,8 +24,10 @@
 
 <div>
 <% if signed_in? %>
-<%= link_to 'New Product', new_product_path %>
-<%= link_to 'Orders', orders_path %>
+  <% if current_user.admin? %>
+    <%= link_to 'New Product', new_product_path %>
+  <% end %>
+  <%= link_to 'Orders', orders_path %>
 <% end %>
 </div>
 

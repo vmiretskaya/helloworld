@@ -59,6 +59,7 @@
             <div class="auth-btn">
               <% if user_signed_in? %>
               <li>
+              <%=current_user.email%> <br>
               <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
               </li>
               <% else %>
@@ -76,10 +77,10 @@
 <!--/header-->
 <!--Navigator bar ends-->
 <% if notice %>
-  <p class=""><%= notice %></p>
+  <p class="" style={margin-bottom:30px;}><%= notice %></p>
 <% end %>
 <% if alert %>
-  <p class=""><%= alert %></p>
+  <p class="" style={margin-bottom:30px;}><%= alert %></p>
 <% end %>
 
 
