@@ -4,7 +4,7 @@ describe UsersController, :type => :controller do
 
   before do
   #  @user = User.create(:email => "example@example.com",:password=>'123456789')
-    @user = FactoryGirl.create(:user,  last_name: "smit") 
+     @user = FactoryGirl.create(:user,  last_name: "smit") 
   end
    
 
