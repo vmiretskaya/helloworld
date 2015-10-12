@@ -28,6 +28,9 @@
   <%= @product.price %>
 </p>
 </div>
+<%= form_tag "/payments/create" do %>
+  <%= render partial: "shared/stripe_checkout_button" %>
+<% end %>
 </div>
 <div class="show-comm-product">
   <%= render 'new_comment' %>
