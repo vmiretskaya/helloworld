@@ -1,18 +1,9 @@
 <div class="product-list">
-<h1>Listing products</h1>
+<h1>CYKLER (
+<%= @products.count%>
+ )</h1>
 
 <table class="product-table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Color</th>
-       <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @products.each do |product| %>
     <%= render partial: "product", locals: {product: product} %>    

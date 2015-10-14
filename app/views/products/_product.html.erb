@@ -1,15 +1,20 @@
-    <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= image_tag(product.image_url, style: "max-height: 200px; max-width: 200px;") %>
-        <br><%= product.image_url %></td>
-        <td><%= product.color %></td>
-        <td><%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+      <tr>
+        <td>
+            <%= link_to(image_tag(product.image_url, class: "img-responsive",style: "max-height: 200px; max-width: 200px;"), product) %><br>
+            <%= product.name %><br>
+            <%= product.description.to_s + " " + product.color.to_s%><br>
+            <%= product.price %>
+        </td>
+        <!--td><%= link_to 'Show', product %></td-->
+        <td>
+        <% if can? :edit, product %>
+        <%= link_to 'Edit', edit_product_path(product) %>
+        <% end %>
+        </td>
         <td>
         <% if can? :delete, product %>
         <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
         </td>
       </tr>
+
