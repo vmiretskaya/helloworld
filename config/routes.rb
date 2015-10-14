@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
   
   resources :users
+  resources :payments
 
   resources :products do
    resources :comments
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
   post 'static_pages/thank_you'
 
   post 'payments/create'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
