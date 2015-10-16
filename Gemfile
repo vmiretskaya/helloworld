@@ -18,6 +18,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'guard-spork'
+  gem 'byebug'
 end
 
 gem 'factory_girl_rails'
@@ -25,6 +26,7 @@ gem 'factory_girl_rails'
 gem 'spork-rails'
 
 gem 'stripe'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

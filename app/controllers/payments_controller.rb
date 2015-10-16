@@ -2,6 +2,7 @@ class PaymentsController < ApplicationController
 
 def create
   token = params[:stripeToken]
+ # byebug
   @product = Product.find(params[:product_id])
   @user = current_user
   # Create the charge on Stripe's servers - this will charge the user's card
@@ -16,8 +17,8 @@ def create
      if charge.paid == true
       @order = Order.create(product_id: @product.id, total: @product.price, user_id: @user.id)
       @order.save
-      UserMailer.order_confirmation(@user).deliver
-      redirect_to product_path(order)
+      UserMailer.mail_confirmation(@user, 'The order has been received!').deliver
+      redirect_to @order
     end
 
   rescue Stripe::CardError => e

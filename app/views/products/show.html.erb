@@ -28,8 +28,12 @@
   <%= @product.price %>
 </p>
 </div>
-<%= form_tag "/payments/create" do %>
-  <%= render partial: "shared/stripe_checkout_button" %>
+<!-- Pay button-->
+<%if @product.price?%>
+  <%= form_tag "/payments/create" do %>
+    <%= hidden_field_tag :product_id, @product.id %>
+    <%= render partial: "shared/stripe_checkout_button" %>
+  <% end %>
 <% end %>
 </div>
 <div class="show-comm-product">
