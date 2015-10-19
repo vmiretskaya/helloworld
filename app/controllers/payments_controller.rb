@@ -17,7 +17,7 @@ def create
      if charge.paid == true
       @order = Order.create(product_id: @product.id, total: @product.price, user_id: @user.id)
       @order.save
-      UserMailer.mail_confirmation(@user, 'The order has been received!').deliver
+      UserMailer.mail_confirmation(@user, 'The order has been received!', @order).deliver
       redirect_to @order
     end
 
