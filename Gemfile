@@ -19,6 +19,7 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem 'guard-spork'
   gem 'byebug'
+  gem "brakeman" , :require => false
 end
 
 gem 'factory_girl_rails'
