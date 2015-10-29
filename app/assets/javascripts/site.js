@@ -6,4 +6,7 @@ $(document).on('ready page:load', function(){
         return $(this).attr('data-score');
       }
     });
+
+// zoom in on the product show images
+    $(".img-zoom").elevateZoom();
 });
