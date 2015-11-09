@@ -28,6 +28,7 @@ gem 'spork-rails'
 
 gem 'stripe'
 
+gem 'angularjs-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

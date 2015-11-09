@@ -1,31 +1,63 @@
-<div class="product-list">
+<!--div class="product-list"-->
 <h1>Listing orders</h1>
 
-<table class="product-table">
+<!--Angular-->
+<div ng-controller = "OrdersCtrl">
+  
+  <table class="table table-hover">
   <thead>
-    <tr>
-      <th>User ID</th>
-      <th>Product ID</th>
-      <th>Total</th>
-      <th colspan="3"></th>
-    </tr>
+    <td>Order ID</td>
+    <td>Product</td>
+    <td>Total</td>
+    
+    <td></td>
   </thead>
 
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.user_id %></td>
-        <td><%= order.product_id %></td>
-        <td><%= order.total %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <tr>
+  <form ng-submit="addOrder()">
+    <td>
+       <span ng-model="newOrder.id"> value="{{orders[orders.length - 1].id + 1 }}"  </span>
+    </td>
 
-<br>
+    <td>
+      <select ng-model="newOrder.product_id" class="form-control">
+      <option ng-repeat="product in products" value="{{product.id}}">{{product.name}}</option>
+      </select>
+    </td>
 
-<%= link_to 'New Order', new_order_path %>
-<%= link_to 'Back', products_path %>
+    <td>
+      <input type="number" step="0.01" class="form-control" ng-model="newOrder.total">
+    </td>
+
+    <td>
+      <input type="submit" value="+" class="btn btn-success">
+    </td>
+    
+    <td>
+      <button ng-click="deleteOrder(order)" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+    </td>
+
+  </form>
+  </tr>
+
+  <tr ng-repeat="order in orders | orderBy:'-id':reverse">
+    <td>
+      {{order.id}}
+    </td>
+     <td>
+      {{order.product.name}}
+      <small ng-show="order.id"><br>-{{order.user.email}} </small>
+    </td>
+    <td>
+      <strong>{{order.total | currency}}</strong>
+    </td>
+    <td>
+      <!-- we will fill this later with content -->
+    </td>
+  </tr>
+
+  </table>
 </div>
+
+
+<!--/div-->
