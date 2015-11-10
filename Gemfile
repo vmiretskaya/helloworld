@@ -24,6 +24,8 @@ end
 
 gem 'factory_girl_rails'
 
+gem 'dalli'
+
 gem 'spork-rails'
 
 gem 'stripe'
