@@ -9,4 +9,18 @@ class Product < ActiveRecord::Base
   		comments.average(:rating).to_f
 	end
 
+
+	def view_counter(id)
+		current_id = $redis.get id;
+		if current_id == nil
+			$redis.set id 0;
+		end	
+		$redis.incr id;
+
+	end	
+
+	def get_views_product(id)
+		$redis.get id;	
+	end	
+
 end

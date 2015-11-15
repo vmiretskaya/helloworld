@@ -32,6 +32,10 @@ gem 'stripe'
 
 gem 'angularjs-rails'
 
+gem 'newrelic_rpm'
+
+gem 'redis-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
