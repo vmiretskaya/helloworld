@@ -10,17 +10,17 @@ class Product < ActiveRecord::Base
 	end
 
 
-	def view_counter(id)
-		current_id = $redis.get id;
-		if current_id == nil
-			$redis.set id 0;
-		end	
-		$redis.incr id;
+	#def view_counter(id)
+	#	current_id = $redis.get id;
+	#	if current_id == nil
+	#		$redis.set id 0;
+	#	end	
+	#	$redis.incr id;
 
-	end	
+	#end	
 
-	def get_views_product(id)
-		$redis.get id;	
-	end	
+	#def get_views_product(id)
+	#	$redis.get id;	
+	#end	
 
 end
