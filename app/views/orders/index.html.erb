@@ -32,12 +32,6 @@
     <td>
       <input type="submit" value="+" class="btn btn-success">
     </td>
-    
-    <td>
-      <button ng-click="deleteOrder(order)" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-    </td>
-
-
   </form>
   </tr>
 
@@ -52,8 +46,11 @@
     <td>
       <strong>{{order.total | currency}}</strong>
     </td>
- <td>
-   <button ng-click="showOrder(order)" class="btn .btn-default btn-sm"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+    <td>
+      <button ng-click="showOrder(order)" class="btn .btn-default btn-sm"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+    </td>
+    <td>
+      <button ng-click="deleteOrder(order)" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
     </td>
   </tr>
 

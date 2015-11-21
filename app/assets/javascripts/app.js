@@ -35,7 +35,7 @@ $scope.deleteOrder = function(order){
 }
 
 $scope.showOrder = function(order){
-  window.open('./orders/' + order.id);
+  window.open('./orders/' + order.id , '_self');
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
