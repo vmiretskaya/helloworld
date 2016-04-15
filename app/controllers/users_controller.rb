@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
   
-
   # GET /users
   # GET /users.json
   def index
@@ -61,11 +60,6 @@ class UsersController < ApplicationController
     if @user.destroy
         redirect_to root_url, notice: "User deleted."
     end
-
-    #respond_to do |format|
-     # format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      #format.json { head :no_content }
-    #end
 
   end
 

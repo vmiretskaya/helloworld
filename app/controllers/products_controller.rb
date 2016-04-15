@@ -14,14 +14,14 @@ class ProductsController < ApplicationController
      # @products = Product.where("name LIKE ?", "%#{search_term}%")
      
      if Rails.env.development? #checks to see if in dev mode
-        @products = Product.where("name LIKE ?", "%#{search_term}%").paginate(:page => params[:page], :per_page => 3)
+        @products = Product.where("name LIKE ?", "%#{search_term}%").paginate(:page => params[:page], :per_page => 9)
       else
-        @products = Product.where("name ilike ?", "%#{search_term}%").paginate(:page => params[:page], :per_page => 3)
+        @products = Product.where("name ilike ?", "%#{search_term}%").paginate(:page => params[:page], :per_page => 9)
       end
 
     else
      # @products = Product.all
-      @products = Product.all.paginate(page: params[:page], per_page: 3)
+      @products = Product.all.paginate(page: params[:page], per_page: 9)
     end
     respond_with @products
   end
@@ -30,7 +30,9 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     #@comments = @product.comments.order("created_at DESC")
-    @comments = @product.comments.all.order("created_at DESC").paginate(page: params[:page], per_page: 3) 
+    @comments = @product.comments.all.order("created_at DESC").paginate(page: params[:page], per_page: 3)
+#byebug
+    @colors = @product.colors;
   end
 
   # GET /products/new

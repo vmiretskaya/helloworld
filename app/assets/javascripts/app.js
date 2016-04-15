@@ -50,12 +50,7 @@ $scope.showOrder = function(order){
   return x;
 }]);
 
-
-
 app.controller('OrderCtrl', ['$scope', 'model',function($scope, models){
-
-
-
 }]);
 *///$scope.orders = models.orders;
 // $scope.orders =[

@@ -1,27 +1,21 @@
-      <tr>
-        <td>
-            <%= link_to(image_tag(product.image_url, width: "200", class: "img-zoom", data_zoom_image: product.image_url), product) %><br>
-            <%= product.name %><br>
-            <%= product.description.to_s + " " + product.color.to_s%><br>
-            <%= product.price %>
-        </td>
-        <!--td>
-        <%= link_to product_path(product) do %>
-            <%= product.name %><br>
-            <%= product.description.to_s + " " + product.color.to_s%><br>
-            <%= product.price %>
-        <% end %>
-            </td>
-        <td><%= link_to 'Show', product %></td-->
-        <td>
-        <% if can? :edit, product %>
-        <%= link_to 'Edit', edit_product_path(product) %>
-        <% end %>
-        </td>
-        <td>
-        <% if can? :delete, product %>
-        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-        </td>
-      </tr>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
+            <%= link_to(image_tag(product.image_url, width: "250", class: "img-zoom", data_zoom_image: product.image_url), product) %><br>
+            <p><b><%= product.name %></b></p>
+            <p><b><%= product.price %></b></p>
+           
+            <p>
+                <% if can? :edit, product %>
+                <%= link_to 'Edit', edit_product_path(product) %>
+                <% end %>
+
+                <% if can? :delete, product %>
+                <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+            </p>
+     </div>
+
+
+
+
+
 

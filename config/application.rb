@@ -27,5 +27,8 @@ module Testapp1
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
+ 
+    #config.assets.enable = true;
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end

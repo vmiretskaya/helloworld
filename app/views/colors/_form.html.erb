@@ -1,0 +1,10 @@
+<%= form_for(@color) do |f| %>
+  <div class="field">
+    <%= f.label :hexcolor %><br>
+    <%= f.text_field :hexcolor %>
+  </div>
+   
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

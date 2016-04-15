@@ -6,6 +6,13 @@ class ApplicationController < ActionController::Base
    
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  helper_method :all_colors
+
+  def all_colors
+    @colors = Color.all;
+  end
+  
+
   rescue_from CanCan::AccessDenied do |exception|
   	redirect_to main_app.root_url, :alert => exception.message
   end

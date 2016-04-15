@@ -1,30 +1,23 @@
-<div class="product-list">
-<h1>CYKLER (
-<%= @products.count%>
- )</h1>
-
-<table class="product-table">
-  <tbody>
+<div class="container">
+  <h1>BICYCLES (<%= @products.count%>)</h1>
+  <div class="row" id = "rowgrid"> 
     <% @products.each do |product| %>
-    <% cache(product) do %>
-    <%= render partial: "product", locals: {product: product} %>    
+      <% cache(product) do %>
+        <%= render partial: "product", locals: {product: product} %>    
+      <% end %>
     <% end %>
+   </div>
+  <hr>
+  <div>
+    <% if signed_in? %>
+      <% if current_user.admin? %>
+        <%= link_to 'New Product', new_product_path %>
+      <% end %>
+    <%= link_to 'Orders', orders_path %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<div>
-<% if signed_in? %>
-  <% if current_user.admin? %>
-    <%= link_to 'New Product', new_product_path %>
-  <% end %>
-  <%= link_to 'Orders', orders_path %>
-<% end %>
+  </div>
+  <div class="links-page">
+    <%= will_paginate @products %>
+  </div>
 </div>
 
-<div class="links-page">
-<%= will_paginate @products %>
-</div>
-</div>

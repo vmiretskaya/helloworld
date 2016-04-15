@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014151956) do
+ActiveRecord::Schema.define(version: 20160320182309) do
+
+  create_table "colors", force: true do |t|
+    t.string "hexcolor"
+  end
+
+  create_table "colors_products", force: true do |t|
+    t.integer "product_id"
+    t.integer "color_id"
+  end
+
+  add_index "colors_products", ["color_id"], name: "index_colors_products_on_color_id"
+  add_index "colors_products", ["product_id"], name: "index_colors_products_on_product_id"
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -40,7 +52,6 @@ ActiveRecord::Schema.define(version: 20151014151956) do
     t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "color"
     t.integer  "price"
   end
 

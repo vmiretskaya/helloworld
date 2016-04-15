@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :user, 
+   devise_for :user, 
              :path => '', 
              :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
     
@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   
   resources :users
   resources :payments
+  resources :colors
+  resources :products_colors
 
   resources :products do
    resources :comments
-  end  
-  
+   end  
+   
   resources :orders, only: [:index, :show, :create, :destroy]
 
   get 'static_pages/about'
