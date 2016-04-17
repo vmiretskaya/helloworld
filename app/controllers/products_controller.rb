@@ -53,6 +53,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+        update_create_prod_colors(@product.id, params[:selectedcolors]) 
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
