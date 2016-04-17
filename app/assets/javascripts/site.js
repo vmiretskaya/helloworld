@@ -37,5 +37,4 @@ $("#colorlist").children("canvas").hover(function(){
 
 });
 
-
 });

@@ -42,6 +42,8 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+     @all_colors = all_colors;
+     @prod_colors = @product.colors;
   end
 
   # POST /products
@@ -65,6 +67,11 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
+        #update products_colors table
+        #byebug
+        update_create_prod_colors(@product.id, params[:selectedcolors])  
+
+        #
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
@@ -92,6 +99,14 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :image_url, :color, :price)
+          params.require(:product).permit(:name, :description, :image_url, :color, :price)
     end
+
+    def update_create_prod_colors(prod_id, new_sel_colors)      
+      @product.colors.delete_all;
+      new_sel_colors.each do |nsc|
+       cur_color = all_colors.find(nsc);
+       @product.colors<<(cur_color);
+      end
+    end  
 end
