@@ -1,0 +1,467 @@
+/* line 5, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/comments.css.scss */
+.product-reviews {
+  color: #4e552b;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'bebas_neue_regularregular',sans-serif;
+  margin-top: 20px;
+}
+.cancel-on-png, .cancel-off-png, .star-on-png, .star-off-png, .star-half-png {
+  font-size: 2em;
+}
+
+@font-face {
+  font-family: "raty";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/raty.eot");
+  src: url("fonts/raty.eot?#iefix") format("embedded-opentype");
+  src: url("fonts/raty.svg#raty") format("svg");
+  src: url("fonts/raty.ttf") format("truetype");
+  src: url("fonts/raty.woff") format("woff");
+}
+
+.cancel-on-png, .cancel-off-png, .star-on-png, .star-off-png, .star-half-png {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "raty";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+.cancel-on-png:before {
+  content: "\e600";
+}
+
+.cancel-off-png:before {
+  content: "\e601";
+}
+
+.star-on-png:before {
+  content: "\f005";
+}
+
+.star-off-png:before {
+  content: "\f006";
+}
+
+.star-half-png:before {
+  content: "\f123";
+}
+@font-face {
+  font-family: 'bebas_neue_regularregular';
+  src: url("bebasneue_regular-webfont.eot");
+  src: url("bebasneue_regular-webfont.eot?#iefix") format("embedded-opentype"), url("bebasneue_regular-webfont.woff2") format("woff2"), url("bebasneue_regular-webfont.woff") format("woff"), url("bebasneue_regular-webfont.ttf") format("truetype"), url("bebasneue_regular-webfont.svg#bebas_neue_regularregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 18, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/products.css.scss */
+.product-list h1 {
+  color: #4e552b;
+  font-weight: bold;
+  text-align: left;
+  font-family: 'bebas_neue_regularregular';
+  margin-top: 20px;
+}
+
+/* line 26, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/products.css.scss */
+.product-table {
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* line 31, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/products.css.scss */
+.show-product {
+  display: inline-block;
+}
+
+/* line 35, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/products.css.scss */
+.show-img-product {
+  float: left;
+  display: inline-block;
+}
+
+/* line 40, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/products.css.scss */
+.show-inf-product {
+  display: inline-block;
+}
+
+/* line 44, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/products.css.scss */
+.show-desc-product {
+  width: 100%;
+  display: inline-block;
+}
+
+/* line 49, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/products.css.scss */
+.show-comm-product {
+  width: 80%;
+}
+
+/* line 53, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/products.css.scss */
+.links-page {
+  width: 20%;
+  margin: auto;
+}
+
+/* line 58, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/products.css.scss */
+.price {
+  font-family: 'bebas_neue_regularregular',sans-serif;
+  font-size: 15px;
+}
+@font-face {
+  font-family: 'bebas_neue_regularregular';
+  src: url("bebasneue_regular-webfont.eot");
+  src: url("bebasneue_regular-webfont.eot?#iefix") format("embedded-opentype"), url("bebasneue_regular-webfont.woff2") format("woff2"), url("bebasneue_regular-webfont.woff") format("woff"), url("bebasneue_regular-webfont.ttf") format("truetype"), url("bebasneue_regular-webfont.svg#bebas_neue_regularregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 14, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/scaffolds.css.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: bebas_neue_regularregular,sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 22, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/scaffolds.css.scss */
+p, ol, ul, td {
+  font-family: bebas_neue_regularregular,sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+/* line 28, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/scaffolds.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 34, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/scaffolds.css.scss */
+a {
+  color: #000;
+}
+/* line 36, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/scaffolds.css.scss */
+a:visited {
+  color: #666;
+}
+/* line 39, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/scaffolds.css.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 46, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/scaffolds.css.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 51, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/scaffolds.css.scss */
+#notice {
+  color: green;
+}
+
+/* line 55, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/scaffolds.css.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 61, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 68, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 78, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+@font-face {
+  font-family: 'bebas_neue_regularregular';
+  src: url("bebasneue_regular-webfont.eot");
+  src: url("bebasneue_regular-webfont.eot?#iefix") format("embedded-opentype"), url("bebasneue_regular-webfont.woff2") format("woff2"), url("bebasneue_regular-webfont.woff") format("woff"), url("bebasneue_regular-webfont.ttf") format("truetype"), url("bebasneue_regular-webfont.svg#bebas_neue_regularregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 18, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.new-prod-header {
+  background-color: #4e552b;
+  font-size: -1.2em;
+  color: white;
+  font-weight: bold;
+}
+
+/* line 25, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.welcome-header {
+  margin-bottom: 0px;
+  padding-bottom: 28px;
+  padding-top: 28px;
+  text-align: center;
+  font-family: 'bebas_neue_regularregular',sans-serif;
+  font-size: 25px;
+}
+
+/* line 34, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.show-product {
+  padding-top: 80px;
+}
+
+/* line 38, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.show-orders {
+  padding-top: 80px;
+}
+
+/*Contacts*/
+/* line 43, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.contact-form-container {
+  /*margin:0 auto;*/
+  margin-top: 80px;
+  width: 100%;
+}
+
+/* line 50, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.contact-form {
+  margin: 0 auto;
+  width: 50%;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* line 59, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.contact-form .row {
+  margin: 0;
+}
+
+/* line 63, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.img-test {
+  margin: 0 auto;
+  width: 30%;
+}
+
+/*Footer*/
+/* line 71, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.twitter {
+  margin-left: auto;
+  padding: 20px;
+  float: left;
+  background-color: transparent;
+}
+
+/* line 79, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.fb-like {
+  float: left;
+  padding: 20px;
+  background-color: transparent;
+}
+
+/* line 87, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.copyright {
+  background-color: transparent;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* line 95, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.footer-block {
+  display: inline-block;
+  background-color: #E4E9ED;
+  width: 100%;
+  padding-top: 10px;
+}
+
+/* line 103, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.video {
+  margin: 0 auto;
+  padding: 20px;
+  width: 50%;
+}
+
+/* line 109, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.social-section {
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+}
+
+/* line 114, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.social-section li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 5px;
+}
+
+/* line 120, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.social-wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 125, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.modal-body {
+  height: 500px;
+}
+
+/* line 129, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+#modalframe {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+/*Navigation bar*/
+/* line 138, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.navbar {
+  position: relative;
+  margin-bottom: 0;
+}
+
+/* line 143, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.navbar-fixed-top {
+  border-width: 0 0 0px;
+}
+
+/* line 147, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.container-fluid {
+  background-color: #4e552b;
+}
+
+/* line 151, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.navbar-collapse {
+  float: right;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 600ms;
+  -webkit-transition: color 600ms;
+}
+
+/* line 159, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.collapse {
+  width: 100%;
+}
+
+/* line 163, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.navbar-inverse .navbar-nav > li > a {
+  color: #428bca;
+  text-shadow: none;
+}
+
+/* line 168, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.projectName {
+  color: #428bca;
+  float: left;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+/* line 175, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.projectName a {
+  font-family: 'bebas_neue_regularregular',serif;
+  text-decoration: none;
+}
+
+/* line 181, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.projectName p {
+  font-size: 1.2em;
+}
+
+/* line 185, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.mainmenu ul li {
+  display: inline;
+  float: right;
+  padding: 0px 10px 10px;
+  font-size: 23px;
+}
+
+/* line 192, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.mainmenu {
+  float: right;
+  background-color: #4e552b;
+  height: 60px;
+  top: 0;
+  padding: 5px 10px 5px;
+  z-index: 1000;
+  list-style: none;
+}
+
+/* line 202, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.mainmenu ul li a {
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 600ms;
+  -webkit-transition: color 600ms;
+}
+
+/* line 209, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+a, a:active {
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+  outline: 0;
+}
+
+/* line 218, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+a:-webkit-any-link {
+  color: -webkit-link;
+  text-decoration: underline;
+  cursor: auto;
+}
+
+/* line 224, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.search-form {
+  float: left;
+  /*width:100%;*/
+}
+
+/* line 229, C:/Webdevelopment_rus/ruby/testapp1/app/assets/stylesheets/static_pages.css.scss */
+.auth-btn {
+  float: right;
+  margin-left: 10px;
+  text-transform: lowercase;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

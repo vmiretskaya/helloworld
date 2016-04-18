@@ -29,7 +29,6 @@ module Testapp1
     config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
  
     #config.assets.enable = true;
-    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end
