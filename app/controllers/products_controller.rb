@@ -55,7 +55,9 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        update_create_prod_colors(@product.id, params[:selectedcolors]) 
+        if !params[:selectedcolors].empty?
+          update_create_prod_colors(@product.id, params[:selectedcolors]) 
+        end  
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
@@ -72,8 +74,9 @@ class ProductsController < ApplicationController
       if @product.update(product_params)
         #update products_colors table
         #byebug
-        update_create_prod_colors(@product.id, params[:selectedcolors])  
-
+        if !params[:selectedcolors].empty?
+          update_create_prod_colors(@product.id, params[:selectedcolors])  
+        end  
         #
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
