@@ -24,6 +24,7 @@ function drawCircle(width,height,canvasSize,element){
 
 $("#colorlist").children("canvas").each(function(indx, element){
      drawCircle(18,18,21,element);
+     console.log("ddddd");
     });
 
 $("#colorlist").children("canvas").hover(function(){
