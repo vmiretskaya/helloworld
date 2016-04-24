@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 <div class="container" style="padding-top:50px;">
+ <div class="row">
   <div class="show-img-product">
     <p>
-      <%= image_tag(@product.image_url, style: "max-height: 400px; max-width: 400px;") %>
+      <%= image_tag(@product.image_url, style: "max-height: 400px; max-width: 400px; padding-left:10px; padding-right:10px;") %>
     </p>
   </div>
   
@@ -12,23 +13,21 @@
     <p><strong><%= @product.price %></strong></p>
     <!-- Pay button-->
     <p>
-    <%if @product.price?%>
-      <%= form_tag "/payments/create" do %>
-        <%= hidden_field_tag :product_id, @product.id %>
-        <%= hidden_field_tag :color_id, @colors.first.id %>
-        <%= render partial: "shared/stripe_checkout_button" %>
+      <%if @product.price?%>
+        <%= form_tag "/payments/create" do %>
+          <%= hidden_field_tag :product_id, @product.id %>
+          <%= hidden_field_tag :color_id, @colors.first.id %>
+          <%= render partial: "shared/stripe_checkout_button" %>
+        <% end %>
       <% end %>
-    <% end %>
-  </p>
+    </p>
     <p id ="colorlist">
       <% @colors.each do |c|%>
         <canvas id = "<%=c.hexcolor%>" data-color="<%=c.id%>"><%=c.hexcolor%></canvas>
-
       <%end%>
      </p>
+  </div><!--/.row-->  
     
-  </div>
-  
   <div class="show-desc-product"><p><%= @product.description %></p></div>
   
   <div class="show-comm-product">
@@ -44,3 +43,4 @@
       <%end%>
   <%end%>    
 </div>
+</div><!--/.container-->
