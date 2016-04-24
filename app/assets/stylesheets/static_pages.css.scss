@@ -1,7 +1,9 @@
 // Place all the styles related to the static_page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+html,body{
+    height: 100%;
+}
 
 @font-face {
     font-family: 'bebas_neue_regularregular';
@@ -72,6 +74,34 @@
 	color:#428bca;
 	font-weight: bold; 
 
+}
+
+/*footer*/
+#wrap{
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
+#wrap:after{
+    content: "";
+    display: block;
+}
+
+footer,#wrap:after{
+    height: 50px;
+}
+
+footer{
+    background: #4e552b;
+    border-top: 3px black solid;
+    margin-top:10px 0 10px 0;   
+}
+
+footer p{
+    color:#428bca;
+    margin:0;
+    padding: 10px 0 0 0;
+    text-align: center;
 }
 
 .modal-body{

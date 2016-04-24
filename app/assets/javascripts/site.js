@@ -8,7 +8,7 @@ $(document).on('ready page:load', function(){
     });
 
 // zoom in on the product show images
-    $(".img-zoom").elevateZoom();
+//$(".img-zoom").elevateZoom();
 
 //add and draw color for product 
 
