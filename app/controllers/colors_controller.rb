@@ -1,10 +1,11 @@
 class ColorsController < ApplicationController
   before_action :set_color, only: [:show, :edit, :update, :destroy]
-  #before_filter :authenticate_user!
+  before_filter :authenticate_user!
   respond_to :json, :html
 
   def index
   	@colors = Color.all;
+     respond_with @colors
   end
 
   def edit
@@ -19,7 +20,7 @@ class ColorsController < ApplicationController
 
     respond_to do |format|
       if @color.save
-        format.html { redirect_to @color, notice: 'Product was successfully created.' }
+        format.html { redirect_to @color, notice: 'Color was successfully created.' }
         format.json { render :show, status: :created, location: @color }
       else
         format.html { render :new }

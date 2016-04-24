@@ -7,10 +7,12 @@ $(document).on('ready page:load', function() {
 app.factory('models', ['$resource', function($resource){
   var orders_model = $resource("/orders/:id.json", {id: "@id"});
   var products_model = $resource("/products/:id.json", {id: "@id"});
+  var colors_model = $resource("/colors/:id.json", {id: "@id"});
 
   var x = {
     orders: orders_model,
-  	products: products_model
+  	products: products_model,
+    colors: colors_model
   };
   return x;
 }]);
@@ -19,10 +21,12 @@ app.factory('models', ['$resource', function($resource){
 app.controller('OrdersCtrl', ['$scope', 'models',function($scope, models){
  	$scope.orders = models.orders.query();
 	$scope.products = models.products.query();
+  $scope.colors = models.colors.query();
 
  $scope.addOrder = function(){
-  if(!$scope.newOrder.product_id || $scope.newOrder.total === ''){ return; }
-  order = models.orders.save($scope.newOrder, function(){
+   if(!$scope.newOrder.product_id || !$scope.newOrder.total || !$scope.newOrder.color_id === '')
+    { return; }
+    order=models.orders.save($scope.newOrder, function(){
     recent_order = models.orders.get({id: order.id});
     $scope.orders.push(recent_order);
     $scope.newOrder = '';

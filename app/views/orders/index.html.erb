@@ -8,6 +8,7 @@
   <thead>
     <td>Order ID</td>
     <td>Product</td>
+    <td>Color</td>
     <td>Total</td>
     
     <td></td>
@@ -22,6 +23,12 @@
     <td>
       <select ng-model="newOrder.product_id" class="form-control">
       <option ng-repeat="product in products" value="{{product.id}}">{{product.name}}</option>
+      </select>
+    </td>
+    
+    <td>
+      <select ng-model="newOrder.color_id" class="form-control">
+      <option ng-repeat="color in colors" value="{{color.id}}">{{color.hexcolor}}</option>
       </select>
     </td>
 
@@ -42,6 +49,9 @@
      <td>
       {{order.product.name}}
       <small ng-show="order.id"><br>-{{order.user.email}} </small>
+    </td>
+    <td>
+      <strong>{{order.color.hexcolor}}</strong>
     </td>
     <td>
       <strong>{{order.total | currency}}</strong>

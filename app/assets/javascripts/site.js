@@ -11,6 +11,7 @@ $(document).on('ready page:load', function(){
     $(".img-zoom").elevateZoom();
 
 //add and draw color for product 
+
 function drawCircle(width,height,canvasSize,element){
      element.width = canvasSize;
      element.height = canvasSize;
@@ -22,10 +23,29 @@ function drawCircle(width,height,canvasSize,element){
      context.fill();   
 }
 
-$("#colorlist").children("canvas").each(function(indx, element){
-     drawCircle(18,18,21,element);
-     console.log("ddddd");
+function drawAllCircles(){
+    $("#colorlist").children("canvas").each(function(indx, element){
+     color_id = $(this).attr('data-color');
+     val_col_id = $("#color_id").val();
+     if(color_id!=val_col_id)
+        drawCircle(18,18,21,element);
+     else
+        drawCircle(20,20,21,element);
     });
+}
+drawAllCircles();
+
+$("#colorlist").children("canvas").on('click', function(){
+    var curCanvas = $(this).closest('canvas').context;
+     var curCanvas = $(this).closest('canvas').context;
+     /////////////////////
+    color_id = $(this).attr('data-color');
+    console.log($(this));
+    $("#color_id").val(color_id);
+    ////////////////////
+    drawAllCircles();
+    });
+
 
 $("#colorlist").children("canvas").hover(function(){
     var curCanvas = $(this).closest('canvas').context;
@@ -34,7 +54,7 @@ $("#colorlist").children("canvas").hover(function(){
 }, 
                                          function(){
    var curCanvas = $(this).closest('canvas').context;
-    drawCircle(18,18,21,curCanvas);
+     drawAllCircles();
 
 });
 

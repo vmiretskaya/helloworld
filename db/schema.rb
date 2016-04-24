@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160320182309) do
+ActiveRecord::Schema.define(version: 20160423182009) do
 
   create_table "colors", force: true do |t|
     t.string "hexcolor"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20160320182309) do
     t.integer "user_id"
     t.integer "product_id"
     t.integer "total"
+    t.integer "color_id"
   end
 
   add_index "orders", ["product_id"], name: "index_orders_on_product_id"

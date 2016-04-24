@@ -5,12 +5,13 @@ class OrdersController < ApplicationController
     respond_to :json, :html
 
     def index
-      @orders = Order.all.to_json(:include => [{:product => {:only => :name}}, {:user => {:only => :email}}])
+      #byebug;
+      @orders = Order.all.to_json(:include => [{:product => {:only => :name}}, {:user => {:only => :email}}, {:color => {:only => :hexcolor}}])
       respond_with @orders
     end
 
     def show
-      @order = Order.find(params[:id]).to_json(:include => [{:product => {:only => :name}}, {:user => {:only => :email}}])
+      @order = Order.find(params[:id]).to_json(:include => [{:product => {:only => :name}}, {:user => {:only => :email}}, {:color => {:only => :hexcolor}}])
       @cur_order = Order.find(params[:id]);
       respond_with @order
     end
@@ -18,8 +19,7 @@ class OrdersController < ApplicationController
     def new
     end
 
-    def create
-     
+    def create    
       @order = Order.create(order_params)
       respond_with @order
     end
@@ -37,6 +37,6 @@ class OrdersController < ApplicationController
     private
 
     def order_params
-      params.require(:order).permit(:product_id, :user_id, :total)
+      params.require(:order).permit(:product_id, :user_id, :color_id, :total)
     end
 end
